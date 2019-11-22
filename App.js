@@ -19,7 +19,7 @@ export default class App extends React.Component {
   render(){
     return (
       <View>
-        <Header title='Pessoas!'></Header>
+        <Header title='Pessoas 1!'></Header>
         <Text>Open up App.js to start working on your app!</Text>
       </View>
     );  
