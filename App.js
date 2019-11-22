@@ -3,6 +3,8 @@ import { StyleSheet, Text, View } from 'react-native';
 
 import Header from './src/components/Header.js';
 
+import axios from 'axios';
+
 
 export default class App extends React.Component {
   
@@ -11,7 +13,7 @@ export default class App extends React.Component {
   }
 
   renderList(){
-    const names =[
+    /*const names =[
       'Eddie Van Halen',
       'Jimi Hendrix',
       'Chimbinha',
@@ -22,7 +24,17 @@ export default class App extends React.Component {
     return <Text key={name}>{name}</Text>
     });
 
-    return textElements
+    return textElements*/
+    axios
+    .get('https://randomuser.me/api/?nat=br&results=5')
+    .then((response) => {
+      const { results } = response.data;
+      const names = results.map((people) =>{
+        return people.name.first
+      });
+      console.log(names);
+    });
+    
   }
 
 
