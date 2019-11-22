@@ -10,30 +10,27 @@ export default class App extends React.Component {
   
   constructor(props){
     super(props);
+
+    this.state = {
+      peoples: []
+    }
+
   }
 
-  renderList(){
-    /*const names =[
-      'Eddie Van Halen',
-      'Jimi Hendrix',
-      'Chimbinha',
-      'Steve Vai',
-    ];
-
-    const textElements = names.map((name, index)  => {
-    return <Text key={name}>{name}</Text>
-    });
-
-    return textElements*/
+  componentDidMount(){
     axios
     .get('https://randomuser.me/api/?nat=br&results=5')
     .then((response) => {
       const { results } = response.data;
-      const names = results.map((people) =>{
-        return people.name.first
+      this.setState({
+        peoples: results
       });
-      console.log(names);
     });
+  }
+
+  renderList(){
+   
+    
     
   }
 
