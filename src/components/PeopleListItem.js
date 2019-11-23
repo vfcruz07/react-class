@@ -28,12 +28,16 @@ const styles = StyleSheet.create({
         alignItems: 'center', 
     },
     lineText:{
+        flex: 7,
         fontSize: 20,
         paddingLeft: 15,
     },
     avatar: {
+        flex: 1,
         aspectRatio: 1,
-        width: 200,
+        width: 40,
+        borderRadius: 50,
+        marginLeft: 15
     }
 });
 
