@@ -8,22 +8,7 @@ import axios from 'axios';
 
 
 export default class PeoplePage extends React.Component {
-  static navigationOptions ={
-    title: 'Pessoas',
-    headerStyle:{
-    backgroundColor: '#6ca2f7',
-    borderBottonWidth: 1,
-    borderBottonColor: '#c5c5c5',
-    },
-    headerTitleStyle:{
-      color: 'white',
-      fontSize: 30,
-      flexGrow: 1,
-      textAlign: 'center',
-    }
-  };
-
-
+  
   constructor(props){
     super(props);
 
@@ -45,9 +30,18 @@ export default class PeoplePage extends React.Component {
   }
 
   render(){
+    //this.props.navigation.navigate(chave da pagina, state)
+    
     return (
       <View>
-        <PeopleList peoples={this.state.peoples}></PeopleList>
+        <PeopleList 
+          peoples={this.state.peoples}
+          onPressItem={(page) => {
+            return(this.props.navigation.navigate('PeopleDetail'));
+          }
+            
+          }  
+        ></PeopleList>
       </View>
     );  
   }
