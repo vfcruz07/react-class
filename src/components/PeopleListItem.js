@@ -9,8 +9,8 @@ const PeopleListItem = props => {
     return(
         <TouchableOpacity
             onPress={() => {
-                alert('Clicou em mim, ' + first);
-                navigateToPeopleDetail();
+                //alert('Clicou em mim, ' + first);
+                navigateToPeopleDetail({people});
             }
         }
         >

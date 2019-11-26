@@ -7,6 +7,8 @@ import PeopleList from '../components/PeopleList.js';
 import axios from 'axios';
 
 
+
+
 export default class PeoplePage extends React.Component {
   
   constructor(props){
@@ -36,8 +38,8 @@ export default class PeoplePage extends React.Component {
       <View>
         <PeopleList 
           peoples={this.state.peoples}
-          onPressItem={(page) => {
-            return(this.props.navigation.navigate('PeopleDetail'));
+          onPressItem={(pageParams) => {
+            return(this.props.navigation.navigate('PeopleDetail', pageParams));
           }
             
           }  
