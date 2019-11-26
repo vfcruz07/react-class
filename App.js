@@ -12,6 +12,7 @@ const StackNavigator = createStackNavigator(
 },
 {
     initialRouteName: 'Main',
+    //headerMode: 'none', /* -- Desabilita o header do StackNavigator  */
     defaultNavigationOptions: {
     title: 'Pessoas',
     headerStyle:{
@@ -24,7 +25,7 @@ const StackNavigator = createStackNavigator(
       fontSize: 30,
       flexGrow: 1,
       textAlign: 'center',
-    }
+    }/**/
   }
 }
 );
